@@ -25,22 +25,19 @@ return view.extend({
                    }, _('GitHub Project page'))
                  ]),
 
-                 E('hr', { 'style': 'margin: 20px 0; border: 0; border-top: 1px solid #eee;' }),
+                 E('hr'),
 
-                 E('div', {
-                     'class': 'cbi-section',
-                     'style': 'border: none; box-shadow: none; padding-top: 0;'
-                 }, [
-                     E('button', {
-                         'class': 'cbi-button cbi-button-action important',
-                         'style': 'margin-right: 10px;',
-                         'click': ui.createHandlerFn(this, 'handleReboot')
-                     }, _('Reboot')),
-                   E('button', {
-                       'class': 'cbi-button cbi-button-reset important',
-                       'click': ui.createHandlerFn(this, 'handlePowerOff')
-                   }, _('PowerOff'))
-                 ])
+                 E('button', {
+                     'class': 'cbi-button cbi-button-action important',
+                     'style': 'margin-right: 10px;',
+                     'click': ui.createHandlerFn(this, 'handleReboot')
+                 }, _('Reboot')),
+
+                 E('button', {
+                     'class': 'cbi-button cbi-button-reset important',
+                     'style': 'margin-right: 10px;',
+                     'click': ui.createHandlerFn(this, 'handlePowerOff')
+                 }, _('PowerOff'))
         ]);
     },
 
