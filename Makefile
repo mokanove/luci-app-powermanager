@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-powermanager
 PKG_VERSION:=0.2.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 LUCI_TITLE:=Luci plugin for rebuild ImmortalWRT shutdown and restart.
 LUCI_PKGARCH:=all

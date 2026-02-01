@@ -82,7 +82,7 @@ return view.extend({
                            'click': function() {
                                ui.hideModal();
                                ui.showModal(_('Shutting down...'), [
-                               E('p', { 'class': 'spinning' }, _('The device is powering off.'))
+                               E('p', { 'class': 'spinning' }, _('The device is powering off...'))
                                ]);
                                fs.exec('/sbin/poweroff').catch(function(e) {
                                    ui.addNotification(null, E('p', _('PowerOff failed')));
