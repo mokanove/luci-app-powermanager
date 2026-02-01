@@ -6,5 +6,8 @@
 			"path": "index"
 		},
 		"order": 99
-	}
+	},
+	"admin/system/reboot": {
+        "disabled": true
+    }
 }

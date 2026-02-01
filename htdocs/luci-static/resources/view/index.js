@@ -21,10 +21,16 @@ return view.extend({
                        'href': 'https://github.com/mokanove/luci-app-powermanager',
                        'target': '_blank',
                        'rel': 'noreferrer noopener',
-                       'style': 'color: bule; text-decoration: none; margin-left: 5px;'
+                       'style': 'color: #007bff; text-decoration: none; margin-left: 5px;'
                    }, _('GitHub Project page'))
                  ]),
-                 E('div', { 'class': 'cbi-section' }, [
+
+                 E('hr', { 'style': 'margin: 20px 0; border: 0; border-top: 1px solid #eee;' }),
+
+                 E('div', {
+                     'class': 'cbi-section',
+                     'style': 'border: none; box-shadow: none; padding-top: 0;'
+                 }, [
                      E('button', {
                          'class': 'cbi-button cbi-button-action important',
                          'style': 'margin-right: 10px;',

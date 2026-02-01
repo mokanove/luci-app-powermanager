@@ -48,7 +48,7 @@ msgid "Shutting down..."
 msgstr "正在关机..."
 
 msgid "The device is powering off."
-msgstr "设备已断电。"
+msgstr "设备已断电"
 
 msgid "PowerOff failed"
 msgstr "关机失败"
