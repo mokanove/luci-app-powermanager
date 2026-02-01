@@ -47,8 +47,8 @@ msgstr "您真的要关机吗？这是一个非官方的操作，有可能导致
 msgid "Shutting down..."
 msgstr "正在关机..."
 
-msgid "The device is powering off."
-msgstr "设备已断电"
+msgid "The device is powering off..."
+msgstr "设备正在断电"
 
 msgid "PowerOff failed"
 msgstr "关机失败"
