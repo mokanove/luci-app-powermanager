@@ -1,6 +1,6 @@
 {
 	"luci-app-powermanager": {
-		"description": "luci-app-powermanager acl file",
+		"description": "ACL file for luci-app-powermanager",
 		"read": {
 			"ubus": {
 				"system": [ "info" ]
