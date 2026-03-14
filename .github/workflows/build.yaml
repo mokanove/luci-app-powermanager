@@ -35,13 +35,17 @@ jobs:
         shell: bash
         run: |
             cd immortalwrt-sdk-24.10.5-x86-64_gcc-13.3.0_musl.Linux-x86_64/package/luci-app-powermanager
-            VERSION=$(sed -n 's/^PKG_VERSION := //p' Makefile)
+            VERSION=$(grep -E "^PKG_VERSION[[:space:]]*:=" Makefile | sed -E 's/.*:=[[:space:]]*//' | tr -d '[:space:]')
             echo "version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.get_version.outputs.version }}
+          tag_name: V${{ steps.get_version.outputs.version }}
           files: |
-            immortalwrt-sdk-24.10.5-x86-64_gcc-13.3.0_musl.Linux-x86_64/bin/packages/*/base/luci-app-powermanager_*.ipk
+            immortalwrt-sdk-24.10.5-x86-64_gcc-13.3.0_musl.Linux-x86_64/bin/packages/*/base/*.ipk
+          body: |
+            # This release by GitHub Actions
+            > I'm lazy, so I'm too lazy to write update logs. As long as it runs, that's fine.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
