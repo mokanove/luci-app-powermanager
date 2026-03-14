@@ -56,6 +56,6 @@ jobs:
             immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64/bin/packages/*/base/*.apk
           body: |
             # This release by GitHub Actions
-            > Do you need know new upgrade? Do it your self!
+            > Do you need know new update? Do it your self!
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
