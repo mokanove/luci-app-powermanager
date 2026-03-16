@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   build:
+    name: Build ${{ matrix.version }} (${{ matrix.target }}-${{ matrix.subtarget }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -27,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
 
       - name: Install Build Dependencies
         uses: mokanove/mokanove/actions/luci-env@main
@@ -61,7 +62,7 @@ jobs:
           make package/luci-app-powermanager/compile V=s -j$(nproc)
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@master
         with:
           tag_name: V${{ steps.get_version.outputs.version }}
           files: ${{ matrix.sdk_name }}/bin/packages/*/*/*.${{ matrix.ext }}
