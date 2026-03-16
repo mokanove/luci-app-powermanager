@@ -30,10 +30,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Build Dependencies
-        uses: ./.actions/luci-env
+        uses: mokanove/mokanove/actions/luci-env@main
 
       - name: Prepare SDK
-        uses: ./.actions/prepare-sdk
+        uses: mokanove/mokanove/actions/prepare-sdk@main
         with:
           version: ${{ matrix.version }}
           target: ${{ matrix.target }}
