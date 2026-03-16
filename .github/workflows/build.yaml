@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build:
-    name: Build (${{ matrix.target }}_${{ matrix.subtarget }} ${{ matrix.ext }})
+    name: Build (${{ matrix.version }}_${{ matrix.ext }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
