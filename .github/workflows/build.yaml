@@ -1,4 +1,4 @@
-name: "2600 metros más cerca de las estrellas."
+name: 2600 metros más cerca de las estrellas.
 
 on:
   push:
@@ -12,8 +12,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      project_name: "luci-app-pm"
-      sdk_arch: "x86-64"
+      project_name: luci-app-pm
+      sdk_arch: x86-64
 
     steps:
       - name: Checkout
