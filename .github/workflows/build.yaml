@@ -54,3 +54,10 @@ jobs:
             - Fixes and improvements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: RSYNC to remote server
+        uses: moaeiou/moaeiou/actions/rsync@main
+        with:
+          local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/*.apk
+          remote: /var/www/html/luci-app/pm/
+          key: ${{ secrets.RA_LA_SERVER }}
