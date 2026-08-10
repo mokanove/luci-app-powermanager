@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build:
-    name: Sueltame Bogota
+    name: Suéltame, Bogotá
     runs-on: ubuntu-latest
     env:
       project_name: luci-app-pm
