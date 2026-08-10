@@ -43,8 +43,6 @@ jobs:
           mv ${{ env.project_name }} ${{ steps.sdk.outputs.sdk_dir }}/package/
           cd ${{ steps.sdk.outputs.sdk_dir }}
           make package/${{ env.project_name }}/compile V=s -j$(nproc)
-          mkdir -p sync/
-          cp ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/*.apk sync/
 
       - name: Release
         uses: softprops/action-gh-release@master
@@ -60,6 +58,6 @@ jobs:
       - name: Send to mirror
         uses: moaeiou/moaeiou/actions/rsync@main
         with:
-          local: sync/
+          local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
           remote: /var/www/html/luci-app/pm/
           key: ${{ secrets.CC_LA_KEY }}
