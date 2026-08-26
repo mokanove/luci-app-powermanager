@@ -60,5 +60,5 @@ jobs:
         with:
           local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
           remote: /var/www/html/luci-app/pm/
-          key: ${{ secrets.CC_LA_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           extra: --delete
