@@ -28,9 +28,6 @@ jobs:
           VERSION=$(grep -E "^PKG_VERSION[[:space:]]*:=" Makefile | sed -E 's/.*:=[[:space:]]*//' | tr -d '[:space:]')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Preparing build environment
-        uses: moaeiou/moaeiou/actions/build-env@main
-
       - name: Prepare SDK
         id: sdk
         uses: moaeiou/moaeiou/actions/prepare-sdk@main
@@ -59,6 +56,6 @@ jobs:
         uses: moaeiou/moaeiou/actions/rsync@main
         with:
           local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
-          remote: /var/www/html/luci-app/pm/
+          remote: luci-app/pm/
           key: ${{ secrets.SSH_KEY }}
           extra: --delete
